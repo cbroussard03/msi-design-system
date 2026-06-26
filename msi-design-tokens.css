@@ -1,0 +1,246 @@
+/**
+ * MSI Design Tokens
+ * MSI, A Division of Dixie Iron Works, Ltd.
+ * "Field Ready. Proven Quality."
+ *
+ * Generated: June 2026
+ * Use this file as the single source of truth for web, documents, and design tools.
+ */
+
+/* ─────────────────────────────────────────────
+   PRIMITIVE COLOR TOKENS
+   Raw palette — reference these only in semantic tokens below.
+───────────────────────────────────────────── */
+:root {
+  --msi-palette-navy-deepest:   #0a0b18;  /* Near-black navy */
+  --msi-palette-navy-primary:   #2a2f7c;  /* Core brand navy/blue */
+  --msi-palette-navy-mid:       #181a3a;  /* Mid navy (website dark surfaces) */
+  --msi-palette-blue-medium:    #5c93f5;  /* Interactive blue */
+  --msi-palette-blue-light:     #8dbbf8;  /* Light blue accent */
+  --msi-palette-orange:         #dc732c;  /* Brand orange — CTA, highlight */
+  --msi-palette-white:          #ffffff;
+}
+
+
+/* ─────────────────────────────────────────────
+   SEMANTIC COLOR TOKENS
+   Use these throughout components and documents.
+───────────────────────────────────────────── */
+:root {
+  /* Brand */
+  --msi-color-brand-primary:    var(--msi-palette-navy-primary);   /* #2a2f7c */
+  --msi-color-brand-accent:     var(--msi-palette-orange);          /* #dc732c */
+
+  /* Backgrounds */
+  --msi-color-bg-default:       var(--msi-palette-white);
+  --msi-color-bg-dark:          var(--msi-palette-navy-deepest);    /* #0a0b18 */
+  --msi-color-bg-dark-mid:      var(--msi-palette-navy-mid);        /* #181a3a */
+  --msi-color-bg-brand:         var(--msi-palette-navy-primary);    /* #2a2f7c */
+  --msi-color-bg-subtle:        #f4f5fb;  /* Near-white blue tint for section alternates */
+
+  /* Text */
+  --msi-color-text-primary:     var(--msi-palette-navy-deepest);    /* #0a0b18 on light bg */
+  --msi-color-text-secondary:   rgba(10, 11, 24, 0.65);             /* Muted body text */
+  --msi-color-text-on-dark:     var(--msi-palette-white);           /* Text on dark/brand bg */
+  --msi-color-text-on-dark-muted: rgba(255, 255, 255, 0.70);
+  --msi-color-text-accent:      var(--msi-palette-orange);          /* Callouts, labels */
+
+  /* Interactive */
+  --msi-color-link:             var(--msi-palette-blue-medium);     /* #5c93f5 */
+  --msi-color-link-hover:       var(--msi-palette-blue-light);      /* #8dbbf8 */
+  --msi-color-focus:            var(--msi-palette-blue-medium);
+
+  /* Buttons */
+  --msi-color-btn-primary-bg:   var(--msi-palette-orange);          /* #dc732c */
+  --msi-color-btn-primary-text: var(--msi-palette-white);
+  --msi-color-btn-primary-hover-bg: #c4611f;                        /* Darkened orange */
+  --msi-color-btn-secondary-bg: var(--msi-palette-navy-primary);    /* #2a2f7c */
+  --msi-color-btn-secondary-text: var(--msi-palette-white);
+  --msi-color-btn-secondary-hover-bg: #1e2260;                      /* Darkened navy */
+
+  /* Borders & Dividers */
+  --msi-color-border:           rgba(42, 47, 124, 0.15);
+  --msi-color-border-strong:    var(--msi-palette-navy-primary);
+  --msi-color-divider:          rgba(10, 11, 24, 0.10);
+}
+
+
+/* ─────────────────────────────────────────────
+   TYPOGRAPHY TOKENS
+───────────────────────────────────────────── */
+:root {
+  /* Families */
+  --msi-font-primary:    'Kollektif', 'Arial', sans-serif;
+  --msi-font-mono:       'Courier New', 'Consolas', monospace; /* Technical specs/part numbers */
+
+  /* Scale — Desktop */
+  --msi-text-xs:    0.75rem;   /* 12px — labels, captions, legal */
+  --msi-text-sm:    0.875rem;  /* 14px — secondary body, table content */
+  --msi-text-base:  1rem;      /* 16px — primary body copy */
+  --msi-text-lg:    1.125rem;  /* 18px — lead paragraphs */
+  --msi-text-xl:    1.25rem;   /* 20px — card headlines, subheadings */
+  --msi-text-2xl:   1.5rem;    /* 24px — section headings (H3) */
+  --msi-text-3xl:   2rem;      /* 32px — page headings (H2) */
+  --msi-text-4xl:   2.5rem;    /* 40px — hero/title headings (H1) */
+  --msi-text-5xl:   3.5rem;    /* 56px — display/hero (promotional) */
+
+  /* Weight */
+  --msi-weight-regular: 400;
+  --msi-weight-bold:    700;
+
+  /* Line Heights */
+  --msi-leading-tight:  1.2;   /* Headings */
+  --msi-leading-normal: 1.5;   /* Body copy */
+  --msi-leading-loose:  1.75;  /* Long-form, technical documents */
+
+  /* Letter Spacing */
+  --msi-tracking-tight:  -0.02em;  /* Large headings */
+  --msi-tracking-normal: 0;
+  --msi-tracking-wide:   0.06em;   /* All-caps labels, eyebrows */
+}
+
+
+/* ─────────────────────────────────────────────
+   SPACING TOKENS
+   Base unit: 4px (0.25rem)
+───────────────────────────────────────────── */
+:root {
+  --msi-space-1:   0.25rem;   /* 4px */
+  --msi-space-2:   0.5rem;    /* 8px */
+  --msi-space-3:   0.75rem;   /* 12px */
+  --msi-space-4:   1rem;      /* 16px */
+  --msi-space-5:   1.25rem;   /* 20px */
+  --msi-space-6:   1.5rem;    /* 24px */
+  --msi-space-8:   2rem;      /* 32px */
+  --msi-space-10:  2.5rem;    /* 40px */
+  --msi-space-12:  3rem;      /* 48px */
+  --msi-space-16:  4rem;      /* 64px */
+  --msi-space-20:  5rem;      /* 80px */
+  --msi-space-24:  6rem;      /* 96px */
+}
+
+
+/* ─────────────────────────────────────────────
+   BORDER RADIUS
+───────────────────────────────────────────── */
+:root {
+  --msi-radius-sm:   0.25rem;   /* 4px — tags, badges */
+  --msi-radius-md:   0.5rem;    /* 8px — inputs, cards */
+  --msi-radius-lg:   0.75rem;   /* 12px — modals, large cards */
+  --msi-radius-full: 9999px;    /* Pill buttons */
+}
+
+
+/* ─────────────────────────────────────────────
+   SHADOWS
+───────────────────────────────────────────── */
+:root {
+  --msi-shadow-sm:  0 1px 3px rgba(10, 11, 24, 0.08);
+  --msi-shadow-md:  0 4px 12px rgba(10, 11, 24, 0.12);
+  --msi-shadow-lg:  0 8px 24px rgba(10, 11, 24, 0.16);
+}
+
+
+/* ─────────────────────────────────────────────
+   LAYOUT
+───────────────────────────────────────────── */
+:root {
+  --msi-page-width:        1200px;
+  --msi-page-width-narrow: 760px;
+  --msi-page-padding:      clamp(1.5rem, 5vw, 5rem);
+}
+
+
+/* ─────────────────────────────────────────────
+   COMPONENT: BUTTONS
+───────────────────────────────────────────── */
+.msi-btn {
+  font-family: var(--msi-font-primary);
+  font-weight: var(--msi-weight-bold);
+  font-size: var(--msi-text-base);
+  letter-spacing: var(--msi-tracking-wide);
+  text-transform: uppercase;
+  border-radius: var(--msi-radius-md);
+  padding: var(--msi-space-3) var(--msi-space-6);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.msi-btn--primary {
+  background-color: var(--msi-color-btn-primary-bg);
+  color: var(--msi-color-btn-primary-text);
+}
+.msi-btn--primary:hover {
+  background-color: var(--msi-color-btn-primary-hover-bg);
+}
+
+.msi-btn--secondary {
+  background-color: var(--msi-color-btn-secondary-bg);
+  color: var(--msi-color-btn-secondary-text);
+}
+.msi-btn--secondary:hover {
+  background-color: var(--msi-color-btn-secondary-hover-bg);
+}
+
+
+/* ─────────────────────────────────────────────
+   COMPONENT: TYPOGRAPHY STYLES
+───────────────────────────────────────────── */
+.msi-display {
+  font-family: var(--msi-font-primary);
+  font-size: var(--msi-text-5xl);
+  font-weight: var(--msi-weight-bold);
+  line-height: var(--msi-leading-tight);
+  letter-spacing: var(--msi-tracking-tight);
+  color: var(--msi-color-text-primary);
+}
+
+.msi-h1 {
+  font-family: var(--msi-font-primary);
+  font-size: var(--msi-text-4xl);
+  font-weight: var(--msi-weight-bold);
+  line-height: var(--msi-leading-tight);
+  letter-spacing: var(--msi-tracking-tight);
+}
+
+.msi-h2 {
+  font-family: var(--msi-font-primary);
+  font-size: var(--msi-text-3xl);
+  font-weight: var(--msi-weight-bold);
+  line-height: var(--msi-leading-tight);
+}
+
+.msi-h3 {
+  font-family: var(--msi-font-primary);
+  font-size: var(--msi-text-2xl);
+  font-weight: var(--msi-weight-bold);
+  line-height: var(--msi-leading-tight);
+}
+
+.msi-body {
+  font-family: var(--msi-font-primary);
+  font-size: var(--msi-text-base);
+  font-weight: var(--msi-weight-regular);
+  line-height: var(--msi-leading-normal);
+  color: var(--msi-color-text-primary);
+}
+
+.msi-body--lead {
+  font-size: var(--msi-text-lg);
+  line-height: var(--msi-leading-loose);
+}
+
+.msi-label {
+  font-family: var(--msi-font-primary);
+  font-size: var(--msi-text-xs);
+  font-weight: var(--msi-weight-bold);
+  letter-spacing: var(--msi-tracking-wide);
+  text-transform: uppercase;
+}
+
+.msi-spec {
+  font-family: var(--msi-font-mono);
+  font-size: var(--msi-text-sm);
+  color: var(--msi-color-text-secondary);
+}

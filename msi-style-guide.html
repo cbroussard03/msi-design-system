@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MSI Brand & Design System</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+  /* ── Tokens ── */
+  :root {
+    --navy-deepest:  #0a0b18;
+    --navy-primary:  #2a2f7c;
+    --navy-mid:      #181a3a;
+    --blue-medium:   #5c93f5;
+    --blue-light:    #8dbbf8;
+    --orange:        #dc732c;
+    --white:         #ffffff;
+    --bg-subtle:     #f4f5fb;
+    --text-primary:  #0a0b18;
+    --text-secondary: rgba(10,11,24,0.60);
+    --border:        rgba(42,47,124,0.15);
+    --radius:        8px;
+    --page-max:      960px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Kollektif', 'Inter', 'Arial', sans-serif;
+    background: var(--white);
+    color: var(--text-primary);
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  /* ── Layout ── */
+  .page { max-width: var(--page-max); margin: 0 auto; padding: 0 2rem 6rem; }
+
+  /* ── Cover ── */
+  .cover {
+    background: var(--navy-deepest);
+    color: var(--white);
+    padding: 5rem 2rem 4rem;
+    margin-bottom: 4rem;
+  }
+  .cover__inner { max-width: var(--page-max); margin: 0 auto; }
+  .cover__eyebrow {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 1rem;
+  }
+  .cover__title {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+  .cover__title span { color: var(--orange); }
+  .cover__sub {
+    font-size: 1.125rem;
+    color: rgba(255,255,255,0.70);
+    max-width: 560px;
+    margin-bottom: 2.5rem;
+  }
+  .cover__tagline {
+    display: inline-block;
+    border: 1.5px solid var(--orange);
+    color: var(--orange);
+    padding: 0.5rem 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: 4px;
+  }
+  .cover__meta {
+    margin-top: 2rem;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.40);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* ── Section structure ── */
+  .section { margin-bottom: 4rem; }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--navy-primary);
+  }
+  .section-number {
+    background: var(--navy-primary);
+    color: var(--white);
+    font-size: 0.75rem;
+    font-weight: 700;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .section-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--navy-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  /* ── Colors ── */
+  .color-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1rem;
+  }
+  .swatch {
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .swatch__block {
+    height: 80px;
+  }
+  .swatch__info {
+    padding: 0.75rem;
+    background: var(--white);
+  }
+  .swatch__name {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.2rem;
+  }
+  .swatch__hex {
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+  }
+  .swatch__role {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    margin-top: 0.25rem;
+    line-height: 1.3;
+  }
+
+  /* ── Typography ── */
+  .type-sample {
+    padding: 1.5rem;
+    background: var(--bg-subtle);
+    border-radius: var(--radius);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: baseline;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .type-sample__label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-secondary);
+    min-width: 120px;
+    flex-shrink: 0;
+  }
+  .type-sample__text { flex: 1; }
+  .type-sample__meta {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    font-family: 'Courier New', monospace;
+    white-space: nowrap;
+    align-self: flex-end;
+  }
+
+  /* ── Voice ── */
+  .voice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  @media (max-width: 600px) { .voice-grid { grid-template-columns: 1fr; } }
+  .voice-card {
+    padding: 1.25rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+  }
+  .voice-card--do  { border-left: 4px solid #22c55e; background: #f0fdf4; }
+  .voice-card--dont { border-left: 4px solid #ef4444; background: #fef2f2; }
+  .voice-card__title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.75rem;
+  }
+  .voice-card--do .voice-card__title   { color: #16a34a; }
+  .voice-card--dont .voice-card__title { color: #dc2626; }
+  .voice-card ul { padding-left: 1.2rem; }
+  .voice-card li { font-size: 0.875rem; margin-bottom: 0.35rem; line-height: 1.4; color: var(--text-primary); }
+
+  /* ── Word choice table ── */
+  table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+  th {
+    background: var(--navy-primary);
+    color: var(--white);
+    text-align: left;
+    padding: 0.6rem 1rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  td { padding: 0.6rem 1rem; border-bottom: 1px solid var(--border); }
+  tr:nth-child(even) td { background: var(--bg-subtle); }
+  td:first-child { color: var(--text-secondary); text-decoration: line-through; font-family: 'Courier New', monospace; }
+  td:last-child  { color: #16a34a; font-weight: 700; }
+
+  /* ── Tone table ── */
+  .tone-table th { background: var(--navy-deepest); }
+  .tone-table td:first-child { text-decoration: none; color: var(--text-primary); font-family: inherit; font-weight: 700; }
+  .tone-table td:last-child  { color: var(--text-primary); font-weight: 400; }
+
+  /* ── Content themes ── */
+  .themes-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; }
+  .theme-card {
+    padding: 1rem 1.25rem;
+    background: var(--navy-primary);
+    color: var(--white);
+    border-radius: var(--radius);
+  }
+  .theme-card__name { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.04em; margin-bottom: 0.35rem; }
+  .theme-card__desc { font-size: 0.8rem; color: rgba(255,255,255,0.70); line-height: 1.4; }
+
+  /* ── Usage matrix ── */
+  .usage-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
+  @media (max-width: 600px) { .usage-grid { grid-template-columns: 1fr; } }
+  .usage-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .usage-card__header {
+    background: var(--orange);
+    color: var(--white);
+    padding: 0.75rem 1rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .usage-card__body { padding: 1rem; }
+  .usage-card__body p { font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.5rem; font-weight: 700; }
+  .usage-card__body ul { padding-left: 1.1rem; margin-bottom: 1rem; }
+  .usage-card__body li { font-size: 0.8rem; color: var(--text-primary); margin-bottom: 0.2rem; }
+
+  /* ── Token reference ── */
+  .token-list { font-size: 0.8rem; }
+  .token-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .token-row:last-child { border: none; }
+  .token-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    flex-shrink: 0;
+    border: 1px solid rgba(0,0,0,0.1);
+  }
+  .token-name  { font-family: 'Courier New', monospace; color: var(--navy-primary); flex: 1; }
+  .token-hex   { font-family: 'Courier New', monospace; color: var(--text-secondary); }
+
+  /* ── Brand facts ── */
+  .facts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 2rem; }
+  .fact { padding: 0.5rem 0; border-bottom: 1px solid var(--border); }
+  .fact__label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-secondary); }
+  .fact__value { font-size: 0.875rem; color: var(--text-primary); margin-top: 0.1rem; }
+
+  /* ── Buttons preview ── */
+  .btn-preview { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; padding: 1.5rem; background: var(--bg-subtle); border-radius: var(--radius); }
+  .btn-preview--dark { background: var(--navy-deepest); }
+  .msi-btn {
+    font-family: inherit;
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 6px;
+    padding: 0.6rem 1.25rem;
+    cursor: pointer;
+  }
+  .msi-btn--primary   { background: var(--orange); color: var(--white); }
+  .msi-btn--secondary { background: var(--navy-primary); color: var(--white); }
+  .msi-btn--ghost     { background: transparent; color: var(--navy-primary); border: 2px solid var(--navy-primary); }
+  .msi-btn--ghost-light { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.5); }
+
+  /* ── Footer ── */
+  .guide-footer {
+    margin-top: 5rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--navy-primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .guide-footer strong { color: var(--navy-primary); }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover__inner">
+    <div class="cover__eyebrow">MSI · A Division of Dixie Iron Works, Ltd.</div>
+    <h1 class="cover__title">Brand &amp; Design<br><span>System Guide</span></h1>
+    <p class="cover__sub">Single source of truth for visual identity, brand voice, and design tokens — covering technical documents, promotional materials, and web design.</p>
+    <div class="cover__tagline">Field Ready. Proven Quality.</div>
+    <div class="cover__meta">Version 1.0 · June 2026 · Living Document</div>
+  </div>
+</div>
+
+<div class="page">
+
+<!-- 1. BRAND FACTS -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-number">1</div>
+    <div class="section-title">Brand Facts</div>
+  </div>
+  <div class="facts-grid">
+    <div class="fact"><div class="fact__label">Full Name</div><div class="fact__value">MSI, A Division of Dixie Iron Works, Ltd.</div></div>
+    <div class="fact"><div class="fact__label">Tagline</div><div class="fact__value">Field Ready. Proven Quality.</div></div>
+    <div class="fact"><div class="fact__label">Headquarters</div><div class="fact__value">Scott, LA (corporate) · Alice, TX (manufacturing)</div></div>
+    <div class="fact"><div class="fact__label">Heritage</div><div class="fact__value">90+ years of manufacturing experience</div></div>
+    <div class="fact"><div class="fact__label">President</div><div class="fact__value">Gerard Danos II</div></div>
+    <div class="fact"><div class="fact__label">Key Differentiator</div><div class="fact__value">Texas-manufactured, competitively priced, lowest kit consumption in flowback service (3:16 Valve)</div></div>
+    <div class="fact"><div class="fact__label">Products</div><div class="fact__value">Plug valves, chokes, pumps, flowline, fittings, actuators, repair kits</div></div>
+    <div class="fact"><div class="fact__label">Brand Pillars</div><div class="fact__value">Made in Texas · Field-proven · Cost-competitive · Service-minded</div></div>
+  </div>
+</div>
+
+<!-- 2. COLOR PALETTE -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-number">2</div>
+    <div class="section-title">Color Palette</div>
+  </div>
+  <div class="color-grid">
+    <div class="swatch">
+      <div class="swatch__block" style="background:#2a2f7c;"></div>
+      <div class="swatch__info">
+        <div class="swatch__name">Navy Primary</div>
+        <div class="swatch__hex">#2a2f7c</div>
+        <div class="swatch__role">Brand color. Headers, section backgrounds, buttons.</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch__block" style="background:#dc732c;"></div>
+      <div class="swatch__info">
+        <div class="swatch__name">Orange</div>
+        <div class="swatch__hex">#dc732c</div>
+        <div class="swatch__role">Accent &amp; CTA. Primary buttons, callouts, highlights.</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch__block" style="background:#0a0b18;"></div>
+      <div class="swatch__info">
+        <div class="swatch__name">Navy Deepest</div>
+        <div class="swatch__hex">#0a0b18</div>
+        <div class="swatch__role">Dark backgrounds, primary body text on light.</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch__block" style="background:#5c93f5;"></div>
+      <div class="swatch__info">
+        <div class="swatch__name">Blue Medium</div>
+        <div class="swatch__hex">#5c93f5</div>
+        <div class="swatch__role">Links, focus rings, interactive states.</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch__block" style="background:#8dbbf8;"></div>
+      <div class="swatch__info">
+        <div class="swatch__name">Blue Light</div>
+        <div class="swatch__hex">#8dbbf8</div>
+        <div class="swatch__role">Hover states, highlights, subtle accents.</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch__block" style="background:#181a3a;"></div>
+      <div class="swatch__info">
+        <div class="swatch__name">Navy Mid</div>
+        <div class="swatch__hex">#181a3a</div>
+        <div class="swatch__role">Dark surface variant — website footers, dark cards.</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch__block" style="background:#ffffff; border: 1px solid #e5e7eb;"></div>
+      <div class="swatch__info">
+        <div class="swatch__name">White</div>
+        <div class="swatch__hex">#ffffff</div>
+        <div class="swatch__role">Default background. Text on dark surfaces.</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch__block" style="background:#f4f5fb;"></div>
+      <div class="swatch__info">
+        <div class="swatch__name">Subtle</div>
+        <div class="swatch__hex">#f4f5fb</div>
+        <div class="swatch__role">Alternating section backgrounds, card fills.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 3. TYPOGRAPHY -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-number">3</div>
+    <div class="section-title">Typography</div>
+  </div>
+  <p style="margin-bottom:1.25rem;font-size:0.875rem;color:var(--text-secondary);">Primary typeface: <strong style="color:var(--text-primary);">Kollektif</strong> — applied to all headings and body copy. Use <strong style="color:var(--text-primary);">Courier New / Consolas</strong> for part numbers, specs, and technical values only.</p>
+
+  <div class="type-sample">
+    <div class="type-sample__label">Display</div>
+    <div class="type-sample__text" style="font-size:3.5rem;font-weight:700;line-height:1.1;letter-spacing:-0.02em;">Field Ready.</div>
+    <div class="type-sample__meta">3.5rem · Bold · −0.02em</div>
+  </div>
+  <div class="type-sample">
+    <div class="type-sample__label">H1 — Page Title</div>
+    <div class="type-sample__text" style="font-size:2.5rem;font-weight:700;line-height:1.2;letter-spacing:-0.02em;">Plug Valves &amp; Chokes</div>
+    <div class="type-sample__meta">2.5rem · Bold · −0.02em</div>
+  </div>
+  <div class="type-sample">
+    <div class="type-sample__label">H2 — Section</div>
+    <div class="type-sample__text" style="font-size:2rem;font-weight:700;line-height:1.2;">Product Overview</div>
+    <div class="type-sample__meta">2rem · Bold</div>
+  </div>
+  <div class="type-sample">
+    <div class="type-sample__label">H3 — Subsection</div>
+    <div class="type-sample__text" style="font-size:1.5rem;font-weight:700;line-height:1.3;">Specifications &amp; Ratings</div>
+    <div class="type-sample__meta">1.5rem · Bold</div>
+  </div>
+  <div class="type-sample">
+    <div class="type-sample__label">Lead Body</div>
+    <div class="type-sample__text" style="font-size:1.125rem;line-height:1.75;max-width:600px;">MSI manufactures high-pressure flow control equipment built for the oilfield. Every valve is tested, certified, and ready to work the moment it arrives on site.</div>
+    <div class="type-sample__meta">1.125rem · Regular · 1.75lh</div>
+  </div>
+  <div class="type-sample">
+    <div class="type-sample__label">Body</div>
+    <div class="type-sample__text" style="font-size:1rem;line-height:1.5;max-width:600px;">The 3:16 valve delivers the lowest kit consumption in flowback service, reducing total cost of ownership without compromising field performance. Pressure ratings up to 15,000 PSI.</div>
+    <div class="type-sample__meta">1rem · Regular · 1.5lh</div>
+  </div>
+  <div class="type-sample">
+    <div class="type-sample__label">Label / Eyebrow</div>
+    <div class="type-sample__text" style="font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--orange);">Product Spotlight</div>
+    <div class="type-sample__meta">0.75rem · Bold · 0.1em · Uppercase</div>
+  </div>
+  <div class="type-sample">
+    <div class="type-sample__label">Spec / Part No.</div>
+    <div class="type-sample__text" style="font-family:'Courier New',monospace;font-size:0.875rem;color:var(--text-secondary);">MSI-3:16-V-15K-FKM-EXT · 15,000 PSI · 3-1/16" Bore</div>
+    <div class="type-sample__meta">Courier New · 0.875rem</div>
+  </div>
+</div>
+
+<!-- 4. BUTTONS -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-number">4</div>
+    <div class="section-title">Buttons &amp; CTAs</div>
+  </div>
+  <p style="margin-bottom:1rem;font-size:0.875rem;color:var(--text-secondary);">All button text is uppercase, bold, with wide letter-spacing. Use <strong style="color:var(--orange);">Orange Primary</strong> for the main action, <strong style="color:var(--navy-primary);">Navy Secondary</strong> for secondary actions.</p>
+  <div class="btn-preview" style="margin-bottom:0.75rem;">
+    <button class="msi-btn msi-btn--primary">Request a Quote</button>
+    <button class="msi-btn msi-btn--secondary">View Products</button>
+    <button class="msi-btn msi-btn--ghost">Learn More</button>
+  </div>
+  <div class="btn-preview btn-preview--dark">
+    <button class="msi-btn msi-btn--primary">Request a Quote</button>
+    <button class="msi-btn msi-btn--ghost-light">View Products</button>
+  </div>
+</div>
+
+<!-- 5. VOICE -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-number">5</div>
+    <div class="section-title">Brand Voice</div>
+  </div>
+  <p style="margin-bottom:1.25rem;font-size:0.875rem;color:var(--text-secondary);">MSI speaks with the authority of engineers and field veterans. We are technically credible, proudly Texan, service-minded, and cost-competitive without ever sounding cheap.</p>
+  <div class="voice-grid" style="margin-bottom:2rem;">
+    <div class="voice-card voice-card--do">
+      <div class="voice-card__title">✓ Do</div>
+      <ul>
+        <li>Lead with the problem we solve or the spec that matters</li>
+        <li>Use real numbers — pressures, sizes, certifications</li>
+        <li>Say "Made in Texas" and "Field Ready. Proven Quality."</li>
+        <li>Tag and recognize employees and partners by name</li>
+        <li>Show field use cases with authentic visuals</li>
+        <li>Use: cost-competitive · purpose-built · engineered for</li>
+      </ul>
+    </div>
+    <div class="voice-card voice-card--dont">
+      <div class="voice-card__title">✗ Don't</div>
+      <ul>
+        <li>Say "cheap," "cheaper," or "budget" without context</li>
+        <li>Use generic stock photography when field photos exist</li>
+        <li>Over-explain to an audience that knows oilfield terminology</li>
+        <li>Sound like a press release ("we are pleased to announce")</li>
+        <li>Use: solutions · leverage · utilize · synergy · cutting-edge</li>
+        <li>Promise things we can't back up with data or engineering</li>
+      </ul>
+    </div>
+  </div>
+
+  <p style="margin-bottom:0.75rem;font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-secondary);">Tone by Context</p>
+  <table class="tone-table" style="margin-bottom:2rem;">
+    <tr><th>Context</th><th>Tone</th></tr>
+    <tr><td>LinkedIn posts</td><td>Professional but warm. Conversational, not corporate.</td></tr>
+    <tr><td>Product descriptions</td><td>Direct, spec-forward, functional. No fluff.</td></tr>
+    <tr><td>Blog / long-form</td><td>Informative, helpful, lightly editorial.</td></tr>
+    <tr><td>Sales collateral</td><td>Confident, benefit-focused, concise.</td></tr>
+    <tr><td>Technical documents</td><td>Precise, neutral, spec-driven. Engineering voice.</td></tr>
+    <tr><td>Internal comms</td><td>Casual, collaborative, action-oriented.</td></tr>
+  </table>
+
+  <p style="margin-bottom:0.75rem;font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-secondary);">Word Choice</p>
+  <table>
+    <tr><th>Instead of…</th><th>Use…</th></tr>
+    <tr><td>cheap / cheaper</td><td>cost-competitive, lower TCO, inexpensive</td></tr>
+    <tr><td>cutting-edge / innovative</td><td>purpose-built, engineered for, designed to</td></tr>
+    <tr><td>solutions</td><td>equipment, valves, kits (be specific)</td></tr>
+    <tr><td>leverage / utilize</td><td>use</td></tr>
+    <tr><td>synergy</td><td>(just don't)</td></tr>
+    <tr><td>we are pleased to announce</td><td>we're launching / new: / just released</td></tr>
+  </table>
+</div>
+
+<!-- 6. CONTENT THEMES -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-number">6</div>
+    <div class="section-title">Content Themes</div>
+  </div>
+  <div class="themes-grid">
+    <div class="theme-card">
+      <div class="theme-card__name">Field Ready. Proven Quality.</div>
+      <div class="theme-card__desc">Core brand anchor line. Use across all channels.</div>
+    </div>
+    <div class="theme-card">
+      <div class="theme-card__name">Made In Texas · GO Texan</div>
+      <div class="theme-card__desc">Domestic manufacturing pride. Lean into it authentically.</div>
+    </div>
+    <div class="theme-card">
+      <div class="theme-card__name">In The Field</div>
+      <div class="theme-card__desc">Partner visits, global installations, authentic field photography.</div>
+    </div>
+    <div class="theme-card">
+      <div class="theme-card__name">Customer Appreciation</div>
+      <div class="theme-card__desc">Events, barbecues, face-to-face relationship building.</div>
+    </div>
+    <div class="theme-card">
+      <div class="theme-card__name">Product Spotlights</div>
+      <div class="theme-card__desc">Spec-driven posts highlighting custom or flagship products.</div>
+    </div>
+    <div class="theme-card">
+      <div class="theme-card__name">Community</div>
+      <div class="theme-card__desc">Blood drives, sponsorships, local involvement.</div>
+    </div>
+  </div>
+</div>
+
+<!-- 7. USAGE BY MEDIUM -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-number">7</div>
+    <div class="section-title">Usage by Medium</div>
+  </div>
+  <div class="usage-grid">
+    <div class="usage-card">
+      <div class="usage-card__header">Technical Documents</div>
+      <div class="usage-card__body">
+        <p>Colors</p>
+        <ul>
+          <li>White background</li>
+          <li>Navy Primary for headings &amp; section bars</li>
+          <li>Orange for callouts &amp; warnings</li>
+          <li>Black/deepest for body text</li>
+        </ul>
+        <p>Typography</p>
+        <ul>
+          <li>H1–H3 in Kollektif Bold</li>
+          <li>Body at 11–12pt, 1.5–1.75 leading</li>
+          <li>Part numbers in Courier New</li>
+        </ul>
+        <p>Voice</p>
+        <ul>
+          <li>Precise, neutral, spec-driven</li>
+          <li>Engineering voice — no marketing language</li>
+        </ul>
+      </div>
+    </div>
+    <div class="usage-card">
+      <div class="usage-card__header">Promotional Materials</div>
+      <div class="usage-card__body">
+        <p>Colors</p>
+        <ul>
+          <li>Dark navy backgrounds (#0a0b18 / #2a2f7c)</li>
+          <li>Orange for CTAs and key callouts</li>
+          <li>White text on dark</li>
+          <li>Blue Medium for secondary accents</li>
+        </ul>
+        <p>Typography</p>
+        <ul>
+          <li>Display type 3.5rem+ for hero</li>
+          <li>Uppercase eyebrows in Orange</li>
+          <li>Bold, short headline copy</li>
+        </ul>
+        <p>Voice</p>
+        <ul>
+          <li>Confident, benefit-focused</li>
+          <li>Lead with spec or field outcome</li>
+        </ul>
+      </div>
+    </div>
+    <div class="usage-card">
+      <div class="usage-card__header">Website</div>
+      <div class="usage-card__body">
+        <p>Colors</p>
+        <ul>
+          <li>White default background</li>
+          <li>Subtle (#f4f5fb) for alternates</li>
+          <li>Dark footer in Navy Deepest</li>
+          <li>Orange for primary buttons</li>
+          <li>Blue Medium for links</li>
+        </ul>
+        <p>Typography</p>
+        <ul>
+          <li>Kollektif via Shopify CDN</li>
+          <li>Body at 1rem / 1.5 leading</li>
+          <li>Responsive scale with clamp()</li>
+        </ul>
+        <p>Voice</p>
+        <ul>
+          <li>Service-minded and direct</li>
+          <li>Spec-forward product descriptions</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 8. TOKEN REFERENCE -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-number">8</div>
+    <div class="section-title">Token Quick Reference</div>
+  </div>
+  <p style="margin-bottom:1rem;font-size:0.875rem;color:var(--text-secondary);">Import <code>msi-design-tokens.css</code> to use these in web projects. Reference <code>msi-tokens.json</code> for Figma variable imports and design tool integrations.</p>
+  <div class="token-list">
+    <div class="token-row"><div class="token-dot" style="background:#2a2f7c;"></div><div class="token-name">--msi-color-brand-primary</div><div class="token-hex">#2a2f7c</div></div>
+    <div class="token-row"><div class="token-dot" style="background:#dc732c;"></div><div class="token-name">--msi-color-brand-accent</div><div class="token-hex">#dc732c</div></div>
+    <div class="token-row"><div class="token-dot" style="background:#0a0b18;"></div><div class="token-name">--msi-color-text-primary</div><div class="token-hex">#0a0b18</div></div>
+    <div class="token-row"><div class="token-dot" style="background:#ffffff;border:1px solid #e5e7eb;"></div><div class="token-name">--msi-color-text-on-dark</div><div class="token-hex">#ffffff</div></div>
+    <div class="token-row"><div class="token-dot" style="background:#5c93f5;"></div><div class="token-name">--msi-color-link</div><div class="token-hex">#5c93f5</div></div>
+    <div class="token-row"><div class="token-dot" style="background:#dc732c;"></div><div class="token-name">--msi-color-btn-primary-bg</div><div class="token-hex">#dc732c</div></div>
+    <div class="token-row"><div class="token-dot" style="background:#2a2f7c;"></div><div class="token-name">--msi-color-btn-secondary-bg</div><div class="token-hex">#2a2f7c</div></div>
+    <div class="token-row"><div class="token-dot" style="background:#f4f5fb;border:1px solid #e5e7eb;"></div><div class="token-name">--msi-color-bg-subtle</div><div class="token-hex">#f4f5fb</div></div>
+  </div>
+</div>
+
+<div class="guide-footer">
+  <div><strong>MSI Brand &amp; Design System</strong> · Version 1.0 · June 2026</div>
+  <div>MSI, A Division of Dixie Iron Works, Ltd. · diwmsi.com</div>
+</div>
+
+</div><!-- /page -->
+</body>
+</html>

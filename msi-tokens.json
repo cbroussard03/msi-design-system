@@ -1,0 +1,111 @@
+{
+  "msi": {
+    "color": {
+      "palette": {
+        "navy": {
+          "deepest": { "value": "#0a0b18", "description": "Near-black navy — dark backgrounds, body text on light" },
+          "mid":     { "value": "#181a3a", "description": "Mid navy — dark surface variant (website)" },
+          "primary": { "value": "#2a2f7c", "description": "Core brand navy/blue — headers, brand sections" }
+        },
+        "blue": {
+          "medium": { "value": "#5c93f5", "description": "Interactive blue — links, focus rings" },
+          "light":  { "value": "#8dbbf8", "description": "Light blue — hover states, highlights" }
+        },
+        "orange": { "value": "#dc732c", "description": "Brand orange — primary CTAs, accents" },
+        "white":  { "value": "#ffffff" }
+      },
+      "semantic": {
+        "brand": {
+          "primary": { "value": "{msi.color.palette.navy.primary}", "description": "Primary brand color" },
+          "accent":  { "value": "{msi.color.palette.orange}",       "description": "Accent / CTA color" }
+        },
+        "background": {
+          "default": { "value": "{msi.color.palette.white}" },
+          "dark":    { "value": "{msi.color.palette.navy.deepest}" },
+          "darkMid": { "value": "{msi.color.palette.navy.mid}" },
+          "brand":   { "value": "{msi.color.palette.navy.primary}" },
+          "subtle":  { "value": "#f4f5fb", "description": "Light blue-tinted section alternates" }
+        },
+        "text": {
+          "primary":       { "value": "{msi.color.palette.navy.deepest}" },
+          "secondary":     { "value": "rgba(10,11,24,0.65)" },
+          "onDark":        { "value": "{msi.color.palette.white}" },
+          "onDarkMuted":   { "value": "rgba(255,255,255,0.70)" },
+          "accent":        { "value": "{msi.color.palette.orange}" }
+        },
+        "interactive": {
+          "link":      { "value": "{msi.color.palette.blue.medium}" },
+          "linkHover": { "value": "{msi.color.palette.blue.light}" }
+        },
+        "button": {
+          "primaryBg":        { "value": "{msi.color.palette.orange}" },
+          "primaryText":      { "value": "{msi.color.palette.white}" },
+          "primaryHoverBg":   { "value": "#c4611f" },
+          "secondaryBg":      { "value": "{msi.color.palette.navy.primary}" },
+          "secondaryText":    { "value": "{msi.color.palette.white}" },
+          "secondaryHoverBg": { "value": "#1e2260" }
+        }
+      }
+    },
+    "font": {
+      "family": {
+        "primary": { "value": "'Kollektif', 'Arial', sans-serif" },
+        "mono":    { "value": "'Courier New', 'Consolas', monospace", "description": "Spec numbers, part codes" }
+      },
+      "size": {
+        "xs":   { "value": "0.75rem",  "px": 12 },
+        "sm":   { "value": "0.875rem", "px": 14 },
+        "base": { "value": "1rem",     "px": 16 },
+        "lg":   { "value": "1.125rem", "px": 18 },
+        "xl":   { "value": "1.25rem",  "px": 20 },
+        "2xl":  { "value": "1.5rem",   "px": 24 },
+        "3xl":  { "value": "2rem",     "px": 32 },
+        "4xl":  { "value": "2.5rem",   "px": 40 },
+        "5xl":  { "value": "3.5rem",   "px": 56 }
+      },
+      "weight": {
+        "regular": { "value": 400 },
+        "bold":    { "value": 700 }
+      },
+      "lineHeight": {
+        "tight":  { "value": 1.2,  "description": "Headings" },
+        "normal": { "value": 1.5,  "description": "Body" },
+        "loose":  { "value": 1.75, "description": "Technical / long-form" }
+      },
+      "letterSpacing": {
+        "tight":  { "value": "-0.02em", "description": "Large display headings" },
+        "normal": { "value": "0" },
+        "wide":   { "value": "0.06em",  "description": "All-caps labels, eyebrows" }
+      }
+    },
+    "spacing": {
+      "1":  { "value": "0.25rem",  "px": 4  },
+      "2":  { "value": "0.5rem",   "px": 8  },
+      "3":  { "value": "0.75rem",  "px": 12 },
+      "4":  { "value": "1rem",     "px": 16 },
+      "5":  { "value": "1.25rem",  "px": 20 },
+      "6":  { "value": "1.5rem",   "px": 24 },
+      "8":  { "value": "2rem",     "px": 32 },
+      "10": { "value": "2.5rem",   "px": 40 },
+      "12": { "value": "3rem",     "px": 48 },
+      "16": { "value": "4rem",     "px": 64 },
+      "20": { "value": "5rem",     "px": 80 },
+      "24": { "value": "6rem",     "px": 96 }
+    },
+    "radius": {
+      "sm":   { "value": "0.25rem",  "description": "Tags, badges" },
+      "md":   { "value": "0.5rem",   "description": "Inputs, cards" },
+      "lg":   { "value": "0.75rem",  "description": "Modals, large cards" },
+      "full": { "value": "9999px",   "description": "Pill buttons" }
+    },
+    "shadow": {
+      "sm": { "value": "0 1px 3px rgba(10,11,24,0.08)" },
+      "md": { "value": "0 4px 12px rgba(10,11,24,0.12)" },
+      "lg": { "value": "0 8px 24px rgba(10,11,24,0.16)" }
+    },
+    "layout": {
+      "pageWidth":       { "value": "1200px" },
+      "pageWidthNarrow": { "value": "760px" }
+    }
+  }
+}
